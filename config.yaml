@@ -1,0 +1,53 @@
+General:
+  Region: "eu-central-1"
+
+Component:
+  CIDR: "10.0.0.0/16"
+  Tags:
+    Name: "ModVPC"
+    beta: "value2"
+    gamma: "value3"
+    
+  PrivateSubnets:
+    Private1:
+      Mask: 23
+      AZ: a
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
+    Private2:
+      Mask: 24
+      AZ: A
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
+    Private3:
+      Mask: 25
+      AZ: a
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
+    Private4:
+      Mask: 26
+      AZ: B
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
+    Private5:
+      Mask: 27
+      AZ: b
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
+    Private6:
+      Mask: 28
+      AZ: c
+      TAGS:
+        key1: value1
+        key2: value2
+        key3: value3
