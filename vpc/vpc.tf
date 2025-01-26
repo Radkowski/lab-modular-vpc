@@ -2,14 +2,6 @@ variable "GENERAL" {}
 
 variable "COMPONENT" {}
 
-variable "STATUS" {
-  description = "Config validation"
-  validation {
-    condition     = var.STATUS == false
-    error_message = "Config Error detected"
-  }
-}
-
 
 resource "aws_vpc" "AceVPC" {
   cidr_block                       = var.COMPONENT.CIDR

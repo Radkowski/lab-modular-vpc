@@ -35,38 +35,52 @@ The following config example deploys a VPC with three subnets, using /23, /24, a
 
 ```yaml
 General:
-  DeploymentPrefix: "MyVPC"
   Region: "eu-central-1"
 
 Component:
   CIDR: "10.0.0.0/16"
   Tags:
-    Name: "MyVPC"
+    Name: "Custom-VPC"
     beta: "value2"
     gamma: "value3"
     
   PrivateSubnets:
-    Private1:
-      Mask: 23
-      AZ: a
+    Subnet1:
+      Mask: 26
+      AZ: euc1-az3
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private2:
-      Mask: 24
-      AZ: A
+        Name: Red
+    Subnet2:
+      Mask: 27
+      AZ: euc1-az1
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private3:
+        Name: Green
+    Subnet3:
+      Mask: 28
+      AZ: euc1-az1
+      TAGS:
+        Name: Blue
+    Subnet4:
       Mask: 25
-      AZ: b
+      AZ: euc1-az2
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
+        Name: Brown
+    Subnet5:
+      Mask: 28
+      AZ: euc1-az3
+      TAGS:
+        Name: Orange
+    Subnet6:
+      Mask: 26
+      AZ: euc1-az1
+      TAGS:
+        Name: Purple
+    Subnet7:
+      Mask: 25
+      AZ: euc1-az2
+      TAGS:
+        Name: Black
+
 ```
 <br><br>
 
@@ -75,47 +89,68 @@ Component:
 
 ```json
 {
-  "General": {
-    "DeploymentPrefix": "MyVPC",
-    "Region": "eu-central-1"
-  },
-  "Component": {
-    "CIDR": "10.0.0.0/16",
-    "Tags": {
-      "Name": "MyVPC",
-      "beta": "value2",
-      "gamma": "value3"
+    "General": {
+        "Region": "eu-central-1"
     },
-    "PrivateSubnets": {
-      "Private1": {
-        "Mask": 23,
-        "AZ": "a",
-        "TAGS": {
-          "key1": "value1",
-          "key2": "value2",
-          "key3": "value3"
+    "Component": {
+        "CIDR": "10.0.0.0/16",
+        "Tags": {
+            "Name": "Custom-VPC",
+            "beta": "value2",
+            "gamma": "value3"
+        },
+        "PrivateSubnets": {
+            "Subnet1": {
+                "Mask": 26,
+                "AZ": "euc1-az3",
+                "TAGS": {
+                    "Name": "Red"
+                }
+            },
+            "Subnet2": {
+                "Mask": 27,
+                "AZ": "euc1-az1",
+                "TAGS": {
+                    "Name": "Green"
+                }
+            },
+            "Subnet3": {
+                "Mask": 28,
+                "AZ": "euc1-az1",
+                "TAGS": {
+                    "Name": "Blue"
+                }
+            },
+            "Subnet4": {
+                "Mask": 25,
+                "AZ": "euc1-az2",
+                "TAGS": {
+                    "Name": "Brown"
+                }
+            },
+            "Subnet5": {
+                "Mask": 28,
+                "AZ": "euc1-az3",
+                "TAGS": {
+                    "Name": "Orange"
+                }
+            },
+            "Subnet6": {
+                "Mask": 26,
+                "AZ": "euc1-az1",
+                "TAGS": {
+                    "Name": "Purple"
+                }
+            },
+            "Subnet7": {
+                "Mask": 25,
+                "AZ": "euc1-az2",
+                "TAGS": {
+                    "Name": "Black"
+                }
+            }
         }
-      },
-      "Private2": {
-        "Mask": 24,
-        "AZ": "A",
-        "TAGS": {
-          "key1": "value1",
-          "key2": "value2",
-          "key3": "value3"
-        }
-      },
-      "Private3": {
-        "Mask": 25,
-        "AZ": "b",
-        "TAGS": {
-          "key1": "value1",
-          "key2": "value2",
-          "key3": "value3"
-        }
-      }
     }
-  }
 }
 ```
 <br><br>
@@ -135,10 +170,7 @@ Component:
         * 24 = /24 or 255.255.255.0
         * 28 = /28 or 255.255.255.240
 
-    - [ ] ***AZ***:  A case-insensitive identifier for the availability zone (the last letter) where the subnets will be deployed, for example (in the eu-central-1 Region): 
-        * a = eu-central-1a
-        * B = eu-central-1b
-        * c = eu-central-1c
+    - [ ] ***AZ***:  Andentifier for the availability zone ID where the subnets will be deployed
 
     - [ ] ***TAGS***:  A list of tags (key/value pairs) assigned to the subnet.
 

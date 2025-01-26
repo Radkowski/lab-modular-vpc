@@ -4,50 +4,43 @@ General:
 Component:
   CIDR: "10.0.0.0/16"
   Tags:
-    Name: "ModVPC"
+    Name: "Custom-VPC"
     beta: "value2"
     gamma: "value3"
     
   PrivateSubnets:
-    Private1:
-      Mask: 23
-      AZ: a
-      TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private2:
-      Mask: 24
-      AZ: A
-      TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private3:
-      Mask: 25
-      AZ: a
-      TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private4:
+    Subnet1:
       Mask: 26
-      AZ: B
+      AZ: euc1-az3
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private5:
+        Name: Red
+    Subnet2:
       Mask: 27
-      AZ: b
+      AZ: euc1-az1
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
-    Private6:
+        Name: Green
+    Subnet3:
       Mask: 28
-      AZ: c
+      AZ: euc1-az1
       TAGS:
-        key1: value1
-        key2: value2
-        key3: value3
+        Name: Blue
+    Subnet4:
+      Mask: 25
+      AZ: euc1-az2
+      TAGS:
+        Name: Brown
+    Subnet5:
+      Mask: 28
+      AZ: euc1-az3
+      TAGS:
+        Name: Orange
+    Subnet6:
+      Mask: 26
+      AZ: euc1-az1
+      TAGS:
+        Name: Purple
+    Subnet7:
+      Mask: 25
+      AZ: euc1-az2
+      TAGS:
+        Name: Black
